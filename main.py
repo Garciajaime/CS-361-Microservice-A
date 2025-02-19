@@ -6,6 +6,9 @@ while True:
     if budgetCheck == 'y':
         with open('BudgetTracker.txt','w',encoding='utf-8') as file:
             file.write('run')
-            time.sleep(1)
+        time.sleep(3)
         with open('BudgetTracker.txt','r', encoding='utf-8') as file:
             budgetInfo = json.load(file)
+            print()
+            print(budgetInfo)
+            break
