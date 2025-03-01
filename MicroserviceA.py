@@ -4,6 +4,7 @@ while True:
     with open('BudgetTracker.txt','r',encoding='utf-8') as file:
         budgetFile = file.read()
         if budgetFile == 'run':
+            print('Requesting Budget Data...')
             with open('ShoppingList.txt','r',encoding='utf-8') as shopFile:
                 shoppingListDict = json.load(shopFile)
                 budget = shoppingListDict['Budget']
@@ -24,7 +25,6 @@ while True:
                     shoppingListCount = 3   # ensures we get only top 3 items
                 for i in range(0,shoppingListCount):
                     shoppingListTopItem = max(newShoppingDict,key=newShoppingDict.get)
-                    print(shoppingListTopItem)
                     topItemsList.append(shoppingListTopItem)
                     newShoppingDict.pop(shoppingListTopItem) # pop item from dictionary
                 # create object to send to client
